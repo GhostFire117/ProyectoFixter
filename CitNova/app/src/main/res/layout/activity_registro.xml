@@ -11,13 +11,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Ingrese sus datos para registrarse: "
+        android:text="¿Porque quieres unirte al chat CitNova? "
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.059"
-        app:layout_constraintHorizontal_bias="0.502" />
+        app:layout_constraintVertical_bias="0.598" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Ingrese sus datos para registrarse: "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.059" />
 
     <EditText
         android:id="@+id/correo"
@@ -55,7 +68,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/nombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -74,18 +87,29 @@
 
     <Button
         android:id="@+id/boton"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="109dp"
+        android:layout_height="44dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:text="Registrarse"
+        android:background="@color/colorPrimaryDark"
+        android:textColorLink="@android:color/holo_blue_dark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.713" />
+        app:layout_constraintVertical_bias="0.926" />
+
+    <EditText
+        android:id="@+id/motivo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="333dp" />
 
 </android.support.constraint.ConstraintLayout>
