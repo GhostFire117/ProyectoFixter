@@ -5,6 +5,8 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -18,6 +20,7 @@ public class Registro extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     EditText nombre,correo,contraseña,motivo;
+    Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,7 @@ public class Registro extends AppCompatActivity {
         correo=(EditText) findViewById(R.id.correo);
         contraseña=(EditText) findViewById(R.id.contraseña);
         motivo=(EditText) findViewById(R.id.motivo);
+        btn=(Button) findViewById(R.id.boton);
         mAuth = FirebaseAuth.getInstance();
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -45,7 +49,25 @@ public class Registro extends AppCompatActivity {
                 // ...
             }
         };
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String nom=nombre.getText().toString();
+                String cor=correo.getText().toString();
+                String con=contraseña.getText().toString();
+
+                if (nom.length()==0 || cor.length()==0 || con.length()==0){
+                    Toast.makeText(Registro.this,"Ingresa tus datos completos",Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    createAccount(cor,con);
+                }
+            }
+        });
     }
+
+
 
     @Override
     public void onStart() {
