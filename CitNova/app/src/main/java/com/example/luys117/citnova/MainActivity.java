@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 if (user != null) {
                     // User is signed in
                     Log.d("lol", "onAuthStateChanged:signed_in:" + user.getUid());
-                    Intent sigue=new Intent(getApplicationContext(),EleccionDeChat.class);
+                    Intent sigue=new Intent(getApplicationContext(),Chat.class);
                     startActivity(sigue);
                 } else {
                     // User is signed out

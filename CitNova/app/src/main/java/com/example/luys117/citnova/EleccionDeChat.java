@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class EleccionDeChat extends AppCompatActivity {
     Button salir;
 
@@ -23,6 +25,7 @@ public class EleccionDeChat extends AppCompatActivity {
                 Intent exit=new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(exit);
                 finish();
+                FirebaseAuth.getInstance().signOut();
             }
         });
     }
